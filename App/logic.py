@@ -56,8 +56,8 @@ def new_logic():
     catalog['tags'] = lt.new_list()
     catalog['book_tags'] = lt.new_list()
     # TODO Implementar la inicialización de la lista de asociación de libros y tags
-    catalog['books_to_read'] = None
-    catalog["book_sublist"] = None
+    catalog['books_to_read'] = lt.new_list()
+    catalog["book_sublist"] = lt.new_list()
     return catalog
 
 
