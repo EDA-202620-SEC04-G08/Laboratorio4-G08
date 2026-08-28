@@ -24,7 +24,7 @@ def top(my_stack):
     if sll.is_empty(my_stack):
         raise Exception('EmptyStructureError: stack is empty')
     else:
-        return sll.get_element(my_stack, 1)
+        return sll.get_element(my_stack, 0)
 
 
 def size(my_stack):
