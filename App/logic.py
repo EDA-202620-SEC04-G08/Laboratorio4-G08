@@ -74,6 +74,7 @@ def load_data(catalog):
     tag_size = load_tags(catalog)
     book_tag_size = load_books_tags(catalog)
     # TODO Cargar los datos de libros para leer
+    books_to_read = load_books_to_read(catalog)
     return books, authors, tag_size, book_tag_size, books_to_read
 
 
@@ -117,6 +118,15 @@ def load_books_to_read(catalog):
     Carga la información del archivo to_read y los agrega a la lista de libros por leer
     """
     # TODO Implementar la carga de los libros por leer del archivo to_read
+    books_to_read_file = data_dir + "GoodReads/to_read.csv"
+
+    input_file = csv.DictReader(
+        open(books_to_read_file, encoding="utf-8")
+        )
+    
+    for book_to_read in input_file:
+        add_book_to_read(catalog, book_to_read)
+
     return books_to_read_size(catalog)
 
 # Funciones de consulta sobre el catálogo
