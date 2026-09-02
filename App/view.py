@@ -64,7 +64,14 @@ def load_data(control):
 
 
 def print_books_to_read(results):
-    print(results)
+    if logic.st.is_empty(results):
+        print("El usuario no tiene libros por leer.")
+        return
+
+    print("\nLibros por leer del usuario:")
+    while not logic.st.is_empty(results):
+        book = logic.st.pop(results)
+        print(f"Book ID: {book['book_id']} | User ID: {book['user_id']}")    
 
 
 def print_tests_results(queue_results, stack_results):
